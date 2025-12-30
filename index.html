@@ -2,32 +2,38 @@
 <html lang="id">
 <head>
   <meta charset="UTF-8">
-  <title>Countdown 2026</title>
+  <title>New Year 2026</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <div class="container">
+<canvas id="bg"></canvas>
 
-    <div id="countdown">
-      <span id="days">00</span>d :
-      <span id="hours">00</span>h :
-      <span id="minutes">00</span>m :
-      <span id="seconds">00</span>s
-    </div>
-
-    <h1 id="title">SYSTEM REBOOT</h1>
-    <p id="subtitle">2026 Incoming...</p>
-
-    <input type="text" id="name" placeholder="Nama kamu" disabled>
-    <textarea id="wish" placeholder="Harapan kamu di 2026..." disabled></textarea>
-    <button id="sendBtn" onclick="saveWish()" disabled>Kirim Harapan</button>
-
-    <div id="wishList"></div>
+<div class="container" id="mainCard">
+  <div id="countdown">
+    <span id="days">00</span>d :
+    <span id="hours">00</span>h :
+    <span id="minutes">00</span>m :
+    <span id="seconds">00</span>s
   </div>
 
-  <button class="admin-btn" onclick="openAdmin()">Admin</button>
+  <h1 id="title">SYSTEM REBOOT</h1>
+  <p id="subtitle">2026 Incoming...</p>
 
-  <script src="script.js"></script>
+  <input type="text" id="name" placeholder="Nama kamu" disabled>
+  <textarea id="wish" placeholder="Harapan kamu di 2026..." disabled></textarea>
+  <button id="sendBtn" disabled>Kirim Harapan</button>
+
+  <div id="afterSend" class="hidden">
+    <h2>See you on 2027 ✨</h2>
+  </div>
+
+  <div id="wishList"></div>
+</div>
+
+<div class="credit">by 0KTXVNUS</div>
+<button class="admin-btn" onclick="openAdmin()">Admin</button>
+
+<script src="script.js"></script>
 </body>
 </html>
