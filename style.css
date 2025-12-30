@@ -1,0 +1,141 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap');
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: 'Orbitron', sans-serif;
+  background: radial-gradient(circle at top, #020024, #000);
+  color: #0ff;
+  overflow: hidden;
+}
+
+/* CANVAS */
+canvas {
+  position: fixed;
+  inset: 0;
+  z-index: -2;
+}
+
+/* AURA */
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background:
+    radial-gradient(circle at 20% 30%, #0ff4, transparent 40%),
+    radial-gradient(circle at 80% 70%, #f0f4, transparent 40%);
+  animation: aura 6s infinite alternate;
+  z-index: -1;
+}
+
+@keyframes aura {
+  to { transform: translateY(-40px); }
+}
+
+/* CARD */
+.container {
+  max-width: 420px;
+  margin: 12vh auto;
+  padding: 30px;
+  border-radius: 22px;
+  background: rgba(0,0,0,0.6);
+  backdrop-filter: blur(20px);
+  text-align: center;
+  position: relative;
+}
+
+/* NEON BORDER */
+.container::before {
+  content: "";
+  position: absolute;
+  inset: -2px;
+  border-radius: 24px;
+  background: linear-gradient(90deg, #0ff, #f0f, #0ff);
+  background-size: 300% 300%;
+  animation: border 4s linear infinite;
+  z-index: -1;
+}
+
+@keyframes border {
+  to { background-position: 300%; }
+}
+
+/* COUNTDOWN */
+#countdown {
+  font-size: 20px;
+  margin-bottom: 10px;
+  text-shadow: 0 0 10px #0ff;
+}
+
+#countdown span {
+  font-size: 26px;
+  font-weight: bold;
+}
+
+/* TITLE */
+h1 {
+  margin: 10px 0;
+  text-shadow: 0 0 20px #0ff;
+}
+
+.newyear {
+  animation: pulse 1.2s infinite;
+}
+
+@keyframes pulse {
+  50% { text-shadow: 0 0 40px #f0f; }
+}
+
+/* FORM */
+input, textarea {
+  width: 100%;
+  margin-top: 14px;
+  padding: 12px;
+  border-radius: 12px;
+  background: rgba(0,0,0,0.85);
+  border: 1px solid #0ff;
+  color: #0ff;
+}
+
+textarea {
+  resize: none;
+  height: 90px;
+}
+
+button {
+  margin-top: 18px;
+  padding: 13px;
+  width: 100%;
+  border-radius: 30px;
+  border: none;
+  background: linear-gradient(90deg, #0ff, #f0f);
+  font-weight: bold;
+  cursor: pointer;
+}
+
+button:disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
+}
+
+/* ADMIN */
+.admin-btn {
+  position: fixed;
+  bottom: 12px;
+  right: 12px;
+  background: none;
+  color: #0ff;
+  border: 1px solid #0ff;
+  padding: 6px 14px;
+  border-radius: 20px;
+  opacity: 0.25;
+}
+
+.admin-btn:hover { opacity: 1; }
+
+#wishList {
+  margin-top: 15px;
+  font-size: 12px;
+  display: none;
+}
